@@ -11,6 +11,10 @@ const CLIENT_ID = process.env.cup_client_id;
 const TABLES_TABLE = process.env.tables_table;
 const RESERVATIONS_TABLE = process.env.reservations_table;
 
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const passwordRegex = /^[a-zA-Z0-9$%^*-_]{12,}$/;
+
+
 // Main handler function
 exports.handler = async (event, context) => {
     console.log("Event:", JSON.stringify({
@@ -83,11 +87,11 @@ async function handleSignup(event) {
             return formatResponse(400, { error: "All fields are required." });
         }
 
-        if (!/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        if (!emailRegex.test(email)) {
             return formatResponse(400, { error: "Invalid email format." });
         }
 
-        if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$%^*-_])[A-Za-z\d$%^*-_]{12,}$/.test(password)) {
+        if (!passwordRegex.test(password)) {
             return formatResponse(400, { error: "Invalid password format." });
         }
 
