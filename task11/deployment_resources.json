@@ -60,7 +60,12 @@
   "task11_api": {
     "resource_type": "api_gateway",
     "deploy_stage": "api",
-    "dependencies": [],
+    "dependencies": [
+      {
+        "resource_name": "${booking_userpool}",
+        "resource_type": "cognito_idp"
+      }
+    ],
     "resources": {
       "/signin": {
         "enable_cors": true,
@@ -68,7 +73,6 @@
           "authorization_type": "NONE",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
-          "enable_proxy": true,
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
@@ -83,7 +87,6 @@
           "authorization_type": "NONE",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
-          "enable_proxy": true,
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
@@ -98,7 +101,6 @@
           "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
-          "enable_proxy": true,
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
@@ -110,7 +112,6 @@
           "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
-          "enable_proxy": true,
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
@@ -125,7 +126,6 @@
           "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
-          "enable_proxy": true,
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
@@ -140,7 +140,6 @@
           "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
-          "enable_proxy": true,
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},
@@ -152,7 +151,6 @@
           "authorization_type": "authorizer",
           "integration_type": "lambda",
           "lambda_name": "api_handler",
-          "enable_proxy": true,
           "api_key_required": false,
           "method_request_parameters": {},
           "integration_request_body_template": {},

@@ -25,7 +25,9 @@
       "resource_name": "${booking_userpool}",
       "resource_type": "cognito_idp",
       "parameter": "client_id"
-    }
+    },
+    "tables_table": "${tables_table}",
+    "reservations_table": "${reservations_table}"
   },
   "publish_version": true,
   "alias": "${lambdas_alias_name}",
