@@ -7,6 +7,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.774.0",
+    "@aws-sdk/util-dynamodb": "^3.774.0",
     "aws-sdk": "^2.1692.0",
     "jsonwebtoken": "^9.0.2",
     "uuid": "^11.1.0"

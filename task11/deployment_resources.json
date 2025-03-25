@@ -16,6 +16,7 @@
             "cognito-idp:DescribeUserPool",
             "cognito-idp:GetUser",
             "cognito-idp:ListUsers",
+            "cognito-idp:AdminSetUserPassword",
             "cognito-idp:AdminCreateUser",
             "cognito-idp:AdminInitiateAuth",
             "cognito-idp:GetIdentityProviderByIdentifier",
